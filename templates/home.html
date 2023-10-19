@@ -22,7 +22,12 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla enim, aliquet at lectus vitae, lobortis consectetur lectus. Etiam efficitur vitae felis non efficitur. Donec vulputate, ipsum eu iaculis tristique, tortor arcu convallis tellus, in fermentum nisi mauris sit amet risus. Nunc vulputate nibh nisi, vitae hendrerit velit pulvinar malesuada. Ut at rutrum dui. In hac habitasse platea dictumst. Aenean nec euismod ligula, vel interdum ipsum. Mauris tempor felis quis est euismod, et pulvinar neque rhoncus. 
     </p>
     <h2 class="text-center mt-2 mb-4">Job Openings</h2>
-    <p>TODO - show the jobs here</p>
+    <div>
+      {% for job in jobs %}
+        {% include 'jobitem.html'%}
+      {% endfor %}
+    
+    </div>
       <div class = "text-center">
     <button class="btn btn-primary btn-lg">Contact Us</button>
         <p>Copyright 2023 , PJ</p>
