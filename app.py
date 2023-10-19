@@ -1,4 +1,5 @@
 from flask import Flask,render_template,jsonify
+from markupsafe import Markup
 
 app = Flask(__name__)
 
