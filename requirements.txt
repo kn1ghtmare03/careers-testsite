@@ -1,2 +1,2 @@
-Flask
-guincorn
+Flask==1.0.1
+guincorn==19.7.1
