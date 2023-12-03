@@ -1,8 +1,9 @@
 <div class = "border-bottom row" style = "margin-bottom:16px;padding-bottom:8px;">
   <div class = "col-9">
-    <h4 style = color:rgb(120,120,120);margin-bottom:4px>{{job['title']}}</h4>
-    <div><b>Location:</b> {{job['location']}}</div>
-    <div><b>Salary:</b> {{job['salary']}}</div> 
+    <h4 style = color:rgb(120,120,120);margin-bottom:4px>{{job.title}}</h4>
+    <h6 style = color:rgb(120,120,120);margin-bottom:4px>{{job.company}}</h6>
+    <div><b>Location:</b> {{job.location}}</div>
+    <div><b>Salary:</b> {{job.salary}}</div>
   </div>
   <div class="col-2 padding-right:16px">
     <a href="mailto:joshiprateek44@gmail.com?subject=Application%20for%20{{job['Title']}}&body=My%20name%20%3A%20%3CEnter%20name%3E%0D%0A%0D%0AMy%20resume%20%3A%20%3CEnter%20resume%3E%0D%0A%0D%0AMy%20LinkedIN%20%3A%20%3CEnter%20linkedIN%20link%3E" type="button" class="btn btn-outline-primary align-middle">Apply</a>
