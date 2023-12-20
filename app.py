@@ -1,27 +1,47 @@
-from flask import Flask, render_template
+from flask import Flask,render_template,jsonify
 from markupsafe import Markup
-from flask_sqlalchemy import SQLAlchemy
-db = SQLAlchemy()
+
 app = Flask(__name__)
-# link for the database connection
-# enter your address instead of this
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:Sagar123&@localhost:3306/careers_website"
-db.init_app(app)
 
+JOBS= [
+  {
+    'id':1,
+    'title':'Data Analyst',
+    'company':'Google',
+    'location':'Mumbai, India',
+    'salary':'$50,000'
+  },
+  {
+    'id':2,
+    'title':'Data Scientist ',
+    'company':'Google',
+    'location':'Delhi, India',
+    'salary':'$80,000'
+  },
+  {
+  'id':3,
+  'title':'Data Analyst',
+  'company':'Google',
+  'location':'Bengaluru, India',
+  'salary':'$70,000'
+},
+  {
+    'id':4,
+    'title':'Backend Engineer',
+    'company':'Microsoft',
+    'location':'Mumbai, India',
+    'salary':'$150,000'
+  }
+]
 
-class Opportunities(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(80), nullable=False)
-    company = db.Column(db.String(12), nullable=False)
-    location = db.Column(db.String(120), nullable=False)
-    salary = db.Column(db.Integer, nullable=False)
-
-
-@app.route("/", methods=["GET"])
-def home():
-    jobs = Opportunities.query.all()
-    return render_template('home.html', jobs=jobs)
+@app.route("/")
+def hello_world():
+  return render_template('home.html',jobs=JOBS)
+@app.route("/api/jobs")
+def list_jobs():
+  return jsonify(JOBS)
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+  app.run(host='0.0.0.0',debug = True)
+  
